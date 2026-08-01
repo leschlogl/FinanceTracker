@@ -53,3 +53,4 @@ coverage/
 
 # Claude Code session runtime state (not project config)
 .claude/scheduled_tasks.lock
+.claude/worktrees/
