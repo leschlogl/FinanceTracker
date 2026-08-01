@@ -1,0 +1,32 @@
+{
+  "expo": {
+    "name": "FinanceTracker",
+    "slug": "financetracker",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "financetracker",
+    "userInterfaceStyle": "automatic",
+    "ios": {
+      "bundleIdentifier": "com.leschlogl.financetracker",
+      "icon": "./assets/expo.icon"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#208AEF",
+          "image": "./assets/images/splash-icon.png",
+          "imageWidth": 76
+        }
+      ],
+      "expo-sqlite",
+      "expo-localization"
+    ],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    }
+  }
+}

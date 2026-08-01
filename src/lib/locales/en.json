@@ -1,0 +1,8 @@
+{
+  "appName": "FinanceTracker",
+  "tabs": {
+    "dashboard": "Dashboard",
+    "spendings": "Spendings",
+    "settings": "Settings"
+  }
+}
