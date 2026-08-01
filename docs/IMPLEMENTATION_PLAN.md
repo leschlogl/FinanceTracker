@@ -18,7 +18,7 @@ Features in the same phase with no dependency on each other can be built in para
 
 - Each feature gets its own branch (`feature/<feature-slug>`, matching the feature file name).
 - If running multiple agents concurrently against this repo, give each one an isolated git worktree (or the Agent tool's `isolation: "worktree"` option) rather than sharing a working directory — avoids one agent's uncommitted changes leaking into another's.
-- Integrate via PR into `main`, one feature at a time. Don't merge two in-flight feature branches into each other directly — merge each into `main` once its acceptance criteria pass, and rebase siblings on top if needed.
+- Integrate via PR into `main`, one feature at a time. Don't merge two in-flight feature branches into each other directly. **PRs are opened once acceptance criteria pass, but merged by the repo owner after their own testing — not auto-merged**, even if verification passed.
 - The **Owns** boundaries in each feature file are what make parallel work safe — if two features in the same phase claim overlapping files, that's a planning bug; fix the plan before starting either.
 
 ## Phases and dependency graph
