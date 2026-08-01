@@ -1,6 +1,6 @@
 # Feature 0.1: Data layer repositories
 
-**Status:** Not started
+**Status:** Done ([PR #2](https://github.com/leschlogl/FinanceTracker/pull/2)) — repositories use a lazily-constructed singleton (`getCategoryRepository()` etc.) rather than an eager one, since `db.ts`'s `openDatabaseSync` runs at module-load time and eager singletons crashed test files that merely imported the module. Test code should use `createXRepository(testDb)` directly.
 **Phase:** 0 (foundation, sequential — do this first, nothing else can safely start without it)
 **Depends on:** —
 

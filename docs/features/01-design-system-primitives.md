@@ -1,6 +1,6 @@
 # Feature 0.2: Design-system primitives
 
-**Status:** Not started
+**Status:** Done ([PR #1](https://github.com/leschlogl/FinanceTracker/pull/1)) — no error/danger color token exists yet; `Input`'s error state uses Tailwind's stock `red-500`/`red-400` rather than a new token. Visual iOS-simulator spot-check wasn't completed in the background agent run; typecheck/lint/test all pass and it follows the already-verified Button/Text pattern exactly, so this was accepted without it.
 **Phase:** 0 (foundation, sequential)
 **Depends on:** —
 
