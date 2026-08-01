@@ -4,11 +4,12 @@ import '../lib/i18n';
 import { useMigrations } from 'drizzle-orm/expo-sqlite/migrator';
 import { NativeTabs } from 'expo-router/unstable-native-tabs';
 import * as SplashScreen from 'expo-splash-screen';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { db } from '@/data/db';
 import migrations from '@/data/migrations/migrations';
+import { seedDefaultCategories } from '@/data/seedCategories';
 import { Text } from '@/design-system';
 
 SplashScreen.preventAutoHideAsync();
@@ -16,18 +17,27 @@ SplashScreen.preventAutoHideAsync();
 export default function RootLayout() {
   const { t } = useTranslation();
   const { success, error } = useMigrations(db, migrations);
+  const [seeded, setSeeded] = useState(false);
 
   useEffect(() => {
-    if (success || error) {
+    if (success) {
+      seedDefaultCategories().then(() => setSeeded(true));
+    }
+  }, [success]);
+
+  useEffect(() => {
+    if (error || (success && seeded)) {
       SplashScreen.hideAsync();
     }
-  }, [success, error]);
+  }, [success, error, seeded]);
 
   if (error) {
-    return <Text className="flex-1 items-center justify-center">Migration error: {error.message}</Text>;
+    return (
+      <Text className="flex-1 items-center justify-center">Migration error: {error.message}</Text>
+    );
   }
 
-  if (!success) {
+  if (!success || !seeded) {
     return null;
   }
 
