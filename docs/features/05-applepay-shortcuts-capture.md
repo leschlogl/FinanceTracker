@@ -1,6 +1,6 @@
 # Feature 2.1: Apple Pay Shortcuts capture
 
-**Status:** Not started
+**Status:** Done ([PR #7](https://github.com/leschlogl/FinanceTracker/pull/7)) — merged. Onboarding content verified against the real Shortcuts app on iOS 26.5 plus Apple's docs (trigger is "Wallet" on iOS 26+, was "Transaction" before). Two real findings during review, see `docs/IMPLEMENTATION_PLAN.md`'s "Known cross-cutting issues": the `NativeTabs` routing bug this surfaced (fixed separately on `main`), and the still-open `source: 'shortcut'` attribution gap (needs a product decision, not fixed here).
 **Phase:** 2
 **Depends on:** [1.2 Manual spend entry](03-manual-spend-entry.md) (reuses its Confirm Spend screen)
 
