@@ -58,5 +58,24 @@
     "deleteConfirmCancel": "Abbrechen",
     "deleteConfirmConfirm": "Löschen",
     "saveError": "Ausgabe konnte nicht gespeichert werden"
+  },
+  "spendings": {
+    "title": "Ausgaben",
+    "addButton": "Ausgabe hinzufügen",
+    "searchPlaceholder": "Händler oder Notiz suchen",
+    "filterLabel": "Nach Kategorie filtern",
+    "noMerchant": "Unbekannter Händler",
+    "emptyTitle": "Noch keine Ausgaben",
+    "emptyMessage": "Füge deine erste Ausgabe hinzu, um den Überblick zu behalten.",
+    "noResultsTitle": "Keine passenden Ausgaben",
+    "noResultsMessage": "Versuche eine andere Suche oder Kategorie.",
+    "rowAccessibilityLabel": "Ausgabe bearbeiten: {{merchant}}, {{amount}}",
+    "deleteAccessibilityLabel": "Ausgabe von {{merchant}} löschen",
+    "deleteConfirmTitle": "Ausgabe löschen?",
+    "deleteConfirmMessage": "Dies kann nicht rückgängig gemacht werden.",
+    "deleteConfirmCancel": "Abbrechen",
+    "deleteConfirmConfirm": "Löschen",
+    "errorLoading": "Ausgaben konnten nicht geladen werden",
+    "errorDeleting": "Ausgabe konnte nicht gelöscht werden"
   }
 }
