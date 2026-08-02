@@ -4,5 +4,36 @@
     "dashboard": "Dashboard",
     "spendings": "Spendings",
     "settings": "Settings"
+  },
+  "settings": {
+    "manageCategories": "Manage categories"
+  },
+  "categories": {
+    "title": "Categories",
+    "addButton": "Add category",
+    "emptyTitle": "No categories yet",
+    "emptyMessage": "Add a category to start organizing your spendings.",
+    "editAccessibilityLabel": "Edit {{name}}",
+    "deleteAccessibilityLabel": "Delete {{name}}",
+    "deleteConfirmTitle": "Delete category?",
+    "deleteConfirmMessage": "Spendings in \"{{name}}\" will be moved to Other.",
+    "deleteConfirmCancel": "Cancel",
+    "deleteConfirmConfirm": "Delete",
+    "errorLoading": "Couldn't load categories",
+    "errorSaving": "Couldn't save category",
+    "errorDeleting": "Couldn't delete category",
+    "form": {
+      "addTitle": "Add category",
+      "editTitle": "Edit category",
+      "nameLabel": "Name",
+      "namePlaceholder": "e.g. Groceries",
+      "nameRequired": "Name is required",
+      "colorLabel": "Color",
+      "colorSwatchLabel": "Color {{color}}",
+      "iconLabel": "Icon",
+      "iconSwatchLabel": "Icon {{icon}}",
+      "cancel": "Cancel",
+      "save": "Save"
+    }
   }
 }

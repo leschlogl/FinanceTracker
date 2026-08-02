@@ -4,5 +4,36 @@
     "dashboard": "Übersicht",
     "spendings": "Ausgaben",
     "settings": "Einstellungen"
+  },
+  "settings": {
+    "manageCategories": "Kategorien verwalten"
+  },
+  "categories": {
+    "title": "Kategorien",
+    "addButton": "Kategorie hinzufügen",
+    "emptyTitle": "Noch keine Kategorien",
+    "emptyMessage": "Füge eine Kategorie hinzu, um deine Ausgaben zu organisieren.",
+    "editAccessibilityLabel": "{{name}} bearbeiten",
+    "deleteAccessibilityLabel": "{{name}} löschen",
+    "deleteConfirmTitle": "Kategorie löschen?",
+    "deleteConfirmMessage": "Ausgaben in \"{{name}}\" werden zu Sonstiges verschoben.",
+    "deleteConfirmCancel": "Abbrechen",
+    "deleteConfirmConfirm": "Löschen",
+    "errorLoading": "Kategorien konnten nicht geladen werden",
+    "errorSaving": "Kategorie konnte nicht gespeichert werden",
+    "errorDeleting": "Kategorie konnte nicht gelöscht werden",
+    "form": {
+      "addTitle": "Kategorie hinzufügen",
+      "editTitle": "Kategorie bearbeiten",
+      "nameLabel": "Name",
+      "namePlaceholder": "z. B. Lebensmittel",
+      "nameRequired": "Name ist erforderlich",
+      "colorLabel": "Farbe",
+      "colorSwatchLabel": "Farbe {{color}}",
+      "iconLabel": "Symbol",
+      "iconSwatchLabel": "Symbol {{icon}}",
+      "cancel": "Abbrechen",
+      "save": "Speichern"
+    }
   }
 }
