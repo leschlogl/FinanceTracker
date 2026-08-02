@@ -2,7 +2,7 @@
 
 **Status:** Not started
 **Phase:** 1
-**Depends on:** [0.1](00-data-layer-repositories.md), [0.2](01-design-system-primitives.md), [1.2 Manual spend entry](03-manual-spend-entry.md) (soft — see below)
+**Depends on:** [0.1](00-data-layer-repositories.md), [0.2](01-design-system-primitives.md), [1.2 Manual spend entry](03-manual-spend-entry.md) — **hard dependency, not soft**: this feature also needs `src/lib/currency.ts`, which 1.2 creates. Run 1.2 to merge first, then this one (not in parallel).
 
 ## Spec reference
 
@@ -11,6 +11,7 @@
 ## Scope
 
 - Replace the `src/app/spendings.tsx` placeholder with the real list: grouped by month, each row showing merchant, category, amount, date (`Card` from 0.2).
+- This feature owns the "+ Add Spend" entry point (per spec, always available) — add it here, wired to 1.2's `/add-spend` route. 1.2 does not add its own entry point (see its feature file) specifically to avoid both features editing `src/app/spendings.tsx` in the same round.
 - Filter by category (a simple picker/chip row using `CategoryPicker` from 1.1, or a lighter filter-specific variant if `CategoryPicker`'s single-select UX doesn't fit a filter — your call, but reuse its data-fetching, don't re-query categories separately).
 - Free-text search across merchant/note — the repository already supports this (`SpendingRepository`, built in 0.1); this feature just wires a search input (`Input` from 0.2) to it, debounced.
 - Tapping a row navigates to edit (`src/app/edit-spend/[id].tsx` from 1.2). Row delete action calls the delete function 1.2 exposed.

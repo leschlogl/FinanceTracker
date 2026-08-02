@@ -12,7 +12,7 @@
 
 This builds the **Confirm Spend** screen that both manual entry and (later) the Apple Pay Shortcuts flow (Feature 2.1) share — build it generically from the start, don't hardcode manual-only assumptions.
 
-- A "+ Add Spend" entry point, always available (per spec) — for now, place it on the Spendings placeholder screen (`src/app/spendings.tsx`) since Feature 1.3 hasn't built the real list yet; coordinate via this file's Status if 1.3 is already in progress when you pick this up.
+- **Do not add a "+ Add Spend" entry point anywhere in this feature** (see Owns/Do-not-touch below) — 1.2 and 1.3 both originally claimed `src/app/spendings.tsx`, which is a real conflict since they run in parallel from the same base commit. 1.3 (Spendings list) now exclusively owns `src/app/spendings.tsx`, including wiring its own "+ Add Spend" button to this feature's `/add-spend` route. This feature only needs to make sure `/add-spend` and `/edit-spend/[id]` exist and work correctly in isolation (verify via direct navigation/deep link in tests, not via a button you build).
 - Confirm Spend screen: amount (required), merchant (optional text), category (required, via `CategoryPicker` from 1.1), date (defaults to now, editable), note (optional). Save persists via `SpendingRepository.create` with `source: 'manual'`.
 - Edit: same screen, pre-filled from an existing spend, `SpendingRepository.update`.
 - Delete: from wherever a spend is displayed (this feature doesn't own a list yet — expose a `deleteSpending` action/hook here that Feature 1.3 will wire into its list rows, since 1.3 depends on this feature).
@@ -24,11 +24,11 @@ This builds the **Confirm Spend** screen that both manual entry and (later) the 
 - `src/app/add-spend.tsx`, `src/app/edit-spend/[id].tsx` (routes)
 - `src/lib/currency.ts` (amount parsing/formatting — minor units ⇄ display string, `Intl.NumberFormat` per `CLAUDE.md`)
 - `src/lib/__tests__/currency.test.ts`
-- Extends: `src/app/spendings.tsx` (temporary "+ Add Spend" button, see above), locale files (`spendings.*` / `confirmSpend.*` keys)
+- Extends: locale files (`confirmSpend.*` keys — don't add `spendings.*` keys, those belong to 1.3)
 
 ## Do not touch
 
-`src/design-system/CategoryPicker.tsx` (1.1's) — import and use it, don't fork it. `src/data/spendingRepository.ts` (0.1's) — same rule as always, extend upstream if a method is missing rather than bypassing it.
+`src/design-system/CategoryPicker.tsx` (1.1's) — import and use it, don't fork it. `src/data/spendingRepository.ts` (0.1's) — same rule as always, extend upstream if a method is missing rather than bypassing it. `src/app/spendings.tsx` — belongs entirely to Feature 1.3, do not touch it or add anything to it, not even temporarily.
 
 ## Key implementation notes
 
