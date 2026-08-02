@@ -6,7 +6,8 @@
     "settings": "Einstellungen"
   },
   "settings": {
-    "manageCategories": "Kategorien verwalten"
+    "manageCategories": "Kategorien verwalten",
+    "setupApplePayCapture": "Apple Pay-Erfassung einrichten"
   },
   "categories": {
     "title": "Kategorien",
@@ -109,5 +110,24 @@
       "cancel": "Abbrechen",
       "save": "Speichern"
     }
+  },
+  "onboardingShortcuts": {
+    "title": "Apple Pay-Erfassung einrichten",
+    "intro": "iOS erlaubt es einer App nicht, die Benachrichtigungen einer anderen App zu lesen, daher kann FinanceTracker Apple-Pay-Zahlungen nicht von selbst erkennen. Richte stattdessen einmalig eine Kurzbefehle-Automation ein, die FinanceTracker direkt nach der Zahlung öffnet – mit bereits ausgefülltem Betrag und Händler.",
+    "step1Title": "1. Kurzbefehle öffnen",
+    "step1Body": "Öffne die App „Kurzbefehle“ auf deinem iPhone.",
+    "step2Title": "2. Neue Automation starten",
+    "step2Body": "Wechsle zum Tab „Automation“, tippe oben rechts auf das Plus-Symbol und dann auf „Neue persönliche Automation erstellen“.",
+    "step3Title": "3. Auslöser „Wallet“ wählen",
+    "step3Body": "Suche nach „Wallet“ (auf älteren iOS-Versionen heißt dieser Auslöser „Transaktion“) und wähle ihn aus. Wähle die Karte(n) aus, mit denen du bezahlst, und lasse „Kategorie“ auf „Beliebig“, sofern du die Automation nicht einschränken möchtest.",
+    "step4Title": "4. Automation im Hintergrund ausführen",
+    "step4Body": "Aktiviere „Sofort ausführen“, damit die Automation ohne Bestätigung läuft, und deaktiviere „Bei Ausführung benachrichtigen“, damit du nicht bei jeder Zahlung eine Benachrichtigung erhältst. Tippe auf „Weiter“ und wähle dann „Neue leere Automation“.",
+    "step5Title": "5. FinanceTracker-Link erstellen",
+    "step5Body": "Tippe auf „Aktion hinzufügen“, suche nach „Text“ und füge sie hinzu. Gib im Textfeld financetracker://add-spend?amount= ein und füge die Variable „Betrag“ der Transaktion ein, dann &merchant= und die Variable „Händler“.",
+    "step6Title": "6. Link öffnen",
+    "step6Body": "Tippe erneut auf „Aktion hinzufügen“, suche nach „URLs öffnen“ und füge sie hinzu – sie übernimmt den Text aus dem Schritt davor automatisch. Tippe auf „Fertig“, um die Automation zu speichern.",
+    "footerTitle": "Das war's",
+    "footerBody": "Beim nächsten Bezahlvorgang mit einer der ausgewählten Karten öffnet sich FinanceTracker automatisch mit vorausgefülltem Betrag und Händler. Das sind Bestwerte – prüfe sie vor dem Speichern immer auf dem Bestätigungsbildschirm, da Kurzbefehle sie nicht immer korrekt auslesen kann.",
+    "manualFallback": "Du kannst eine Ausgabe jederzeit auch manuell hinzufügen – die Apple-Pay-Automation ist nur eine Abkürzung, um das Formular für dich auszufüllen."
   }
 }

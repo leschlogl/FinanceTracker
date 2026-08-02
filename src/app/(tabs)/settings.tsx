@@ -23,6 +23,15 @@ export default function SettingsScreen() {
           </Text>
         </Pressable>
       </Link>
+      {/* Temporary until Settings (feature 3.2) wires the real entry point,
+          see docs/features/05-applepay-shortcuts-capture.md */}
+      <Link href="/onboarding-shortcuts" asChild>
+        <Pressable accessibilityRole="link">
+          <Text variant="body" className="text-primary underline dark:text-primaryDark">
+            {t('settings.setupApplePayCapture')}
+          </Text>
+        </Pressable>
+      </Link>
     </SafeAreaView>
   );
 }
