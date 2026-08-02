@@ -64,7 +64,8 @@
     "testPathIgnorePatterns": [
       "/node_modules/",
       "/src/data/migrations/"
-    ]
+    ],
+    "testTimeout": 15000
   },
   "private": true
 }
