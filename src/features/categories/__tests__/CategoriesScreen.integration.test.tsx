@@ -28,50 +28,63 @@ function createTestDb() {
 }
 
 describe('CategoriesScreen (integration)', () => {
-  it('reassigns existing spendings to Other when their category is deleted', async () => {
-    jest.spyOn(Alert, 'alert').mockImplementation((_title, _message, buttons) => {
-      const confirmButton = buttons?.find((button) => button.style === 'destructive');
-      confirmButton?.onPress?.();
-    });
+  // Real SQLite (better-sqlite3) + a full render/delete/refetch cycle through the
+  // screen's UI is inherently heavier than the mocked-repository unit tests in
+  // CategoriesScreen.test.tsx — Jest's 5000ms default was tight enough to flake
+  // on slower CI hardware even though it passed comfortably locally.
+  it(
+    'reassigns existing spendings to Other when their category is deleted',
+    async () => {
+      jest.spyOn(Alert, 'alert').mockImplementation((_title, _message, buttons) => {
+        const confirmButton = buttons?.find((button) => button.style === 'destructive');
+        confirmButton?.onPress?.();
+      });
 
-    const db = createTestDb();
-    const repository = createCategoryRepository(db);
+      const db = createTestDb();
+      const repository = createCategoryRepository(db);
 
-    await db
-      .insert(schema.categories)
-      .values({ id: OTHER_CATEGORY_ID, name: 'Other', color: '#8E8E93', icon: 'ellipsis.circle.fill' })
-      .run();
-    const food = await repository.create({ name: 'Food', color: '#FF9500', icon: 'fork.knife' });
-    db.insert(schema.spendings)
-      .values({
-        id: 'spend-1',
-        amount: 1200,
-        currency: 'EUR',
-        merchant: 'REWE',
-        categoryId: food.id,
-        date: new Date('2026-08-01'),
-        note: null,
-        source: 'manual',
-      })
-      .run();
+      await db
+        .insert(schema.categories)
+        .values({
+          id: OTHER_CATEGORY_ID,
+          name: 'Other',
+          color: '#8E8E93',
+          icon: 'ellipsis.circle.fill',
+        })
+        .run();
+      const food = await repository.create({ name: 'Food', color: '#FF9500', icon: 'fork.knife' });
+      db.insert(schema.spendings)
+        .values({
+          id: 'spend-1',
+          amount: 1200,
+          currency: 'EUR',
+          merchant: 'REWE',
+          categoryId: food.id,
+          date: new Date('2026-08-01'),
+          note: null,
+          source: 'manual',
+        })
+        .run();
 
-    const { findByLabelText, findByText, queryByText } = await render(
-      <CategoriesScreen repository={repository} />,
-    );
+      const { findByLabelText, findByText, queryByText } = await render(
+        <CategoriesScreen repository={repository} />,
+      );
 
-    await findByText('Food');
-    fireEvent.press(await findByLabelText('Delete Food'));
+      await findByText('Food');
+      fireEvent.press(await findByLabelText('Delete Food'));
 
-    await waitFor(() => {
-      expect(queryByText('Food')).toBeNull();
-    });
+      await waitFor(() => {
+        expect(queryByText('Food')).toBeNull();
+      });
 
-    const [spending] = db.select().from(schema.spendings).all();
-    expect(spending.categoryId).toBe(OTHER_CATEGORY_ID);
+      const [spending] = db.select().from(schema.spendings).all();
+      expect(spending.categoryId).toBe(OTHER_CATEGORY_ID);
 
-    const remainingCategories = await repository.list();
-    expect(remainingCategories.map((category) => category.id)).toEqual([OTHER_CATEGORY_ID]);
+      const remainingCategories = await repository.list();
+      expect(remainingCategories.map((category) => category.id)).toEqual([OTHER_CATEGORY_ID]);
 
-    jest.restoreAllMocks();
-  });
+      jest.restoreAllMocks();
+    },
+    15000,
+  );
 });
