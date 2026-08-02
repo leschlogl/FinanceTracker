@@ -1,6 +1,6 @@
 # Feature 1.1: Categories management
 
-**Status:** PR open ([PR #3](https://github.com/leschlogl/FinanceTracker/pull/3)), awaiting review/merge. Typecheck/lint/test independently re-verified (14 suites, 46 tests). Visual iOS-simulator check of the actual screen wasn't completed — couldn't get a deep link to the tab-external `/categories` route to land, and no simulator tap/accessibility automation available; please check visually when reviewing.
+**Status:** Done ([PR #3](https://github.com/leschlogl/FinanceTracker/pull/3)) — merged. One follow-up fix landed on the branch before merge: the delete-reassigns-to-Other integration test (real SQLite, heavier than the mocked-repository unit tests) intermittently exceeded Jest's 5000ms default on CI hardware despite running consistently under 250ms locally; fixed by bumping that one test's timeout to 15s.
 **Phase:** 1
 **Depends on:** [0.1 Data layer repositories](00-data-layer-repositories.md), [0.2 Design-system primitives](01-design-system-primitives.md)
 
