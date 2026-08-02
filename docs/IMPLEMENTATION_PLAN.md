@@ -59,7 +59,7 @@ Roadmap section. Don't start these until explicitly requested, same rule as alwa
 | 0.2 | [Design-system primitives](features/01-design-system-primitives.md) | 0 | — | Done ([#1](https://github.com/leschlogl/FinanceTracker/pull/1)) |
 | 1.1 | [Categories management](features/02-categories-management.md) | 1 | 0.1, 0.2 | Done ([#3](https://github.com/leschlogl/FinanceTracker/pull/3)) |
 | 1.2 | [Manual spend entry](features/03-manual-spend-entry.md) | 1 | 0.1, 0.2, 1.1 | Done ([#4](https://github.com/leschlogl/FinanceTracker/pull/4)) |
-| 1.3 | [Spendings list](features/04-spendings-list.md) | 1 | 0.1, 0.2, 1.2 (soft) | Not started |
+| 1.3 | [Spendings list](features/04-spendings-list.md) | 1 | 0.1, 0.2, 1.2 (soft) | Done ([#5](https://github.com/leschlogl/FinanceTracker/pull/5)) — Phase 1 complete |
 | 2.1 | [Apple Pay Shortcuts capture](features/05-applepay-shortcuts-capture.md) | 2 | 1.2 | Not started |
 | 2.2 | [Recurring expenses](features/06-recurring-expenses.md) | 2 | 0.1, 1.1 | Not started |
 | 3.1 | [Dashboard](features/07-dashboard.md) | 3 | 0.1, 1.1 | Not started |

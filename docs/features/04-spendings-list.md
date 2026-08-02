@@ -1,6 +1,6 @@
 # Feature 1.3: Spendings list
 
-**Status:** Not started
+**Status:** Done ([PR #5](https://github.com/leschlogl/FinanceTracker/pull/5)) — merged. Fetches 12 trailing months via `Promise.all` since `SpendingRepository.list()` is month-scoped only (no range query) — fine at this scale, worth knowing if performance ever matters.
 **Phase:** 1
 **Depends on:** [0.1](00-data-layer-repositories.md), [0.2](01-design-system-primitives.md), [1.2 Manual spend entry](03-manual-spend-entry.md) — **hard dependency, not soft**: this feature also needs `src/lib/currency.ts`, which 1.2 creates. Run 1.2 to merge first, then this one (not in parallel).
 
