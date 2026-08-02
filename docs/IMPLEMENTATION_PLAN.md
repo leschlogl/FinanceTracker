@@ -57,7 +57,7 @@ Roadmap section. Don't start these until explicitly requested, same rule as alwa
 |---|---------|-------|------------|--------|
 | 0.1 | [Data layer repositories](features/00-data-layer-repositories.md) | 0 | — | Done ([#2](https://github.com/leschlogl/FinanceTracker/pull/2)) |
 | 0.2 | [Design-system primitives](features/01-design-system-primitives.md) | 0 | — | Done ([#1](https://github.com/leschlogl/FinanceTracker/pull/1)) |
-| 1.1 | [Categories management](features/02-categories-management.md) | 1 | 0.1, 0.2 | Not started |
+| 1.1 | [Categories management](features/02-categories-management.md) | 1 | 0.1, 0.2 | PR open ([#3](https://github.com/leschlogl/FinanceTracker/pull/3)), awaiting review/merge |
 | 1.2 | [Manual spend entry](features/03-manual-spend-entry.md) | 1 | 0.1, 0.2, 1.1 | Not started |
 | 1.3 | [Spendings list](features/04-spendings-list.md) | 1 | 0.1, 0.2, 1.2 (soft) | Not started |
 | 2.1 | [Apple Pay Shortcuts capture](features/05-applepay-shortcuts-capture.md) | 2 | 1.2 | Not started |

@@ -1,6 +1,6 @@
 # Feature 1.1: Categories management
 
-**Status:** Not started
+**Status:** PR open ([PR #3](https://github.com/leschlogl/FinanceTracker/pull/3)), awaiting review/merge. Typecheck/lint/test independently re-verified (14 suites, 46 tests). Visual iOS-simulator check of the actual screen wasn't completed — couldn't get a deep link to the tab-external `/categories` route to land, and no simulator tap/accessibility automation available; please check visually when reviewing.
 **Phase:** 1
 **Depends on:** [0.1 Data layer repositories](00-data-layer-repositories.md), [0.2 Design-system primitives](01-design-system-primitives.md)
 
