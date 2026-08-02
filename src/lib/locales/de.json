@@ -35,5 +35,28 @@
       "cancel": "Abbrechen",
       "save": "Speichern"
     }
+  },
+  "confirmSpend": {
+    "addTitle": "Ausgabe hinzufügen",
+    "editTitle": "Ausgabe bearbeiten",
+    "loading": "Wird geladen…",
+    "notFound": "Diese Ausgabe konnte nicht gefunden werden.",
+    "amountLabel": "Betrag",
+    "amountError": "Gib einen Betrag größer als 0 ein",
+    "merchantLabel": "Händler",
+    "merchantPlaceholder": "z. B. REWE",
+    "categoryLabel": "Kategorie",
+    "categoryError": "Wähle eine Kategorie",
+    "dateLabel": "Datum",
+    "dateError": "Gib ein gültiges Datum ein (JJJJ-MM-TT)",
+    "noteLabel": "Notiz",
+    "notePlaceholder": "Optional",
+    "save": "Speichern",
+    "delete": "Ausgabe löschen",
+    "deleteConfirmTitle": "Ausgabe löschen?",
+    "deleteConfirmMessage": "Dies kann nicht rückgängig gemacht werden.",
+    "deleteConfirmCancel": "Abbrechen",
+    "deleteConfirmConfirm": "Löschen",
+    "saveError": "Ausgabe konnte nicht gespeichert werden"
   }
 }

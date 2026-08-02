@@ -35,5 +35,28 @@
       "cancel": "Cancel",
       "save": "Save"
     }
+  },
+  "confirmSpend": {
+    "addTitle": "Add spend",
+    "editTitle": "Edit spend",
+    "loading": "Loading…",
+    "notFound": "This spend couldn't be found.",
+    "amountLabel": "Amount",
+    "amountError": "Enter an amount greater than 0",
+    "merchantLabel": "Merchant",
+    "merchantPlaceholder": "e.g. REWE",
+    "categoryLabel": "Category",
+    "categoryError": "Select a category",
+    "dateLabel": "Date",
+    "dateError": "Enter a valid date (YYYY-MM-DD)",
+    "noteLabel": "Note",
+    "notePlaceholder": "Optional",
+    "save": "Save",
+    "delete": "Delete spend",
+    "deleteConfirmTitle": "Delete spend?",
+    "deleteConfirmMessage": "This can't be undone.",
+    "deleteConfirmCancel": "Cancel",
+    "deleteConfirmConfirm": "Delete",
+    "saveError": "Couldn't save this spend"
   }
 }
