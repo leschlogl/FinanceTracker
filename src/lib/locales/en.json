@@ -6,7 +6,8 @@
     "settings": "Settings"
   },
   "settings": {
-    "manageCategories": "Manage categories"
+    "manageCategories": "Manage categories",
+    "setupApplePayCapture": "Set up Apple Pay capture"
   },
   "categories": {
     "title": "Categories",
@@ -109,5 +110,24 @@
       "cancel": "Cancel",
       "save": "Save"
     }
+  },
+  "onboardingShortcuts": {
+    "title": "Set up Apple Pay capture",
+    "intro": "iOS doesn't let one app read another app's notifications, so FinanceTracker can't detect Apple Pay payments on its own. Instead, set up a one-time Shortcuts automation that opens FinanceTracker right after you pay, with the amount and merchant already filled in.",
+    "step1Title": "1. Open Shortcuts",
+    "step1Body": "Open the Shortcuts app on your iPhone.",
+    "step2Title": "2. Start a new automation",
+    "step2Body": "Go to the Automation tab, tap the + button in the top right, then tap \"Create Personal Automation\".",
+    "step3Title": "3. Choose the Wallet trigger",
+    "step3Body": "Search for \"Wallet\" (this trigger is called \"Transaction\" on older iOS versions) and select it. Choose the card(s) you pay with, and leave Category set to \"Any\" unless you want to limit the automation to certain kinds of purchases.",
+    "step4Title": "4. Run it silently",
+    "step4Body": "Turn on \"Run Immediately\" so the automation runs without asking for confirmation, and turn off \"Notify When Run\" so you don't get a notification every time you pay. Tap Next, then choose \"New Blank Automation\".",
+    "step5Title": "5. Build the FinanceTracker link",
+    "step5Body": "Tap \"Add Action\", search for \"Text\", and add it. In the text box, enter financetracker://add-spend?amount= and insert the transaction's Amount variable, then add &merchant= and insert the Merchant variable.",
+    "step6Title": "6. Open the link",
+    "step6Body": "Tap \"Add Action\" again, search for \"Open URLs\", and add it — it picks up the text from the step above automatically. Tap Done to save the automation.",
+    "footerTitle": "That's it",
+    "footerBody": "The next time you pay with one of the chosen cards, FinanceTracker opens with the amount and merchant pre-filled. These are best-effort — always check them on the confirm screen before saving, since Shortcuts can't always read them correctly.",
+    "manualFallback": "You can always add a spend by hand too — the Apple Pay automation is just a shortcut for filling in the form yourself."
   }
 }

@@ -61,10 +61,12 @@
   },
   "jest": {
     "preset": "jest-expo",
+    "roots": [
+      "<rootDir>/src"
+    ],
     "testPathIgnorePatterns": [
       "/node_modules/",
-      "/src/data/migrations/",
-      "/.claude/worktrees/"
+      "/src/data/migrations/"
     ],
     "testTimeout": 15000
   },
