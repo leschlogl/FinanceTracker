@@ -1,6 +1,6 @@
 # Feature 2.2: Recurring expenses
 
-**Status:** Not started
+**Status:** Done ([PR #6](https://github.com/leschlogl/FinanceTracker/pull/6)) — merged, with a real follow-up: `Spending` has no column linking a generated row back to its `RecurringExpense`, needed for correct idempotent generation. Proposed fix (not yet done): add `recurringExpenseId: text('recurring_expense_id').references(() => recurringExpenses.id)`, nullable, on `spendings`, via a coordinated migration. Stopgap in place until then: generated spends carry an exact-match marker in `note` (`recurring-expense-id:<id>`) — this means a recurring-generated spend can't also carry a real note, and a user hand-editing that note breaks duplicate detection for that row. Whoever picks up the schema change should also migrate existing marker-based rows to the new column.
 **Phase:** 2
 **Depends on:** [0.1](00-data-layer-repositories.md), [1.1 Categories management](02-categories-management.md) (for `CategoryPicker`)
 
