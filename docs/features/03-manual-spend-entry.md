@@ -1,6 +1,6 @@
 # Feature 1.2: Manual spend entry (Confirm Spend screen)
 
-**Status:** Not started
+**Status:** Done ([PR #4](https://github.com/leschlogl/FinanceTracker/pull/4)) — merged. `src/lib/currency.ts` is ready for 1.3/3.1 to reuse. One fix landed that affects the whole test suite: raised Jest's global `testTimeout` to 15000ms (`package.json`) after a second, different test intermittently exceeded the 5000ms default on CI hardware — a hardware/scheduling pattern across async-fetch-on-mount tests generally, not one slow test.
 **Phase:** 1
 **Depends on:** [0.1](00-data-layer-repositories.md), [0.2](01-design-system-primitives.md), [1.1 Categories management](02-categories-management.md) (for `CategoryPicker`)
 
