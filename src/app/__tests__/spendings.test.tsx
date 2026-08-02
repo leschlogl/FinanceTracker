@@ -4,7 +4,7 @@ import '@/lib/i18n';
 import { getCategoryRepository } from '@/data/categoryRepository';
 import { getSpendingRepository } from '@/data/spendingRepository';
 
-import SpendingsRoute from '../spendings';
+import SpendingsRoute from '../(tabs)/spendings';
 
 // See src/app/__tests__/add-spend.test.tsx for why src/data/db.ts is mocked
 // here: it opens a real expo-sqlite native connection, unavailable under

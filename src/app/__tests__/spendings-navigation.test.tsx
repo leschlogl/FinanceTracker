@@ -5,8 +5,8 @@ import '@/lib/i18n';
 import { getCategoryRepository } from '@/data/categoryRepository';
 import { getSpendingRepository } from '@/data/spendingRepository';
 
+import SpendingsRoute from '../(tabs)/spendings';
 import EditSpendRoute from '../edit-spend/[id]';
-import SpendingsRoute from '../spendings';
 
 // Same db mock as src/app/__tests__/spendings.test.tsx (see its comment) —
 // duplicated in its own file rather than shared because this test

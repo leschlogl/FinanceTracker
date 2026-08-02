@@ -63,7 +63,8 @@
     "preset": "jest-expo",
     "testPathIgnorePatterns": [
       "/node_modules/",
-      "/src/data/migrations/"
+      "/src/data/migrations/",
+      "/.claude/worktrees/"
     ],
     "testTimeout": 15000
   },

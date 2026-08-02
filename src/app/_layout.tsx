@@ -2,10 +2,9 @@ import '../global.css';
 import '../lib/i18n';
 
 import { useMigrations } from 'drizzle-orm/expo-sqlite/migrator';
-import { NativeTabs } from 'expo-router/unstable-native-tabs';
+import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect, useState } from 'react';
-import { useTranslation } from 'react-i18next';
 import { AppState } from 'react-native';
 
 import { db } from '@/data/db';
@@ -17,7 +16,6 @@ import { runRecurringExpenseGeneration } from '@/features/recurring-expenses/run
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
-  const { t } = useTranslation();
   const { success, error } = useMigrations(db, migrations);
   const [seeded, setSeeded] = useState(false);
 
@@ -76,20 +74,15 @@ export default function RootLayout() {
     return null;
   }
 
+  // The tab bar itself lives in the (tabs) group's own _layout.tsx (see its
+  // comment) — NativeTabs must not be the root layout, since it hardcodes
+  // useOnlyUserDefinedScreens: true and would make every other route file
+  // (add-spend, categories, edit-spend/[id], etc.) unreachable. Everything
+  // outside the (tabs) group is auto-discovered by Stack from the file
+  // system, no explicit <Stack.Screen> needed per route.
   return (
-    <NativeTabs>
-      <NativeTabs.Trigger name="index">
-        <NativeTabs.Trigger.Icon sf="chart.pie.fill" />
-        <NativeTabs.Trigger.Label>{t('tabs.dashboard')}</NativeTabs.Trigger.Label>
-      </NativeTabs.Trigger>
-      <NativeTabs.Trigger name="spendings">
-        <NativeTabs.Trigger.Icon sf="list.bullet.rectangle" />
-        <NativeTabs.Trigger.Label>{t('tabs.spendings')}</NativeTabs.Trigger.Label>
-      </NativeTabs.Trigger>
-      <NativeTabs.Trigger name="settings">
-        <NativeTabs.Trigger.Icon sf="gearshape.fill" />
-        <NativeTabs.Trigger.Label>{t('tabs.settings')}</NativeTabs.Trigger.Label>
-      </NativeTabs.Trigger>
-    </NativeTabs>
+    <Stack screenOptions={{ headerBackButtonDisplayMode: 'minimal' }}>
+      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+    </Stack>
   );
 }
