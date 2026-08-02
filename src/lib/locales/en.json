@@ -77,5 +77,37 @@
     "deleteConfirmConfirm": "Delete",
     "errorLoading": "Couldn't load spendings",
     "errorDeleting": "Couldn't delete this spend"
+  },
+  "recurringExpenses": {
+    "title": "Recurring expenses",
+    "addButton": "Add recurring expense",
+    "emptyTitle": "No recurring expenses yet",
+    "emptyMessage": "Add a recurring expense like rent or a subscription to have it generate a spend automatically each month.",
+    "rowSubtitle": "{{amount}} on day {{day}}",
+    "editAccessibilityLabel": "Edit {{name}}",
+    "deleteAccessibilityLabel": "Delete {{name}}",
+    "deleteConfirmTitle": "Delete recurring expense?",
+    "deleteConfirmMessage": "\"{{name}}\" will no longer generate new spendings. Spendings already generated from it are not affected.",
+    "deleteConfirmCancel": "Cancel",
+    "deleteConfirmConfirm": "Delete",
+    "errorLoading": "Couldn't load recurring expenses",
+    "errorSaving": "Couldn't save recurring expense",
+    "errorDeleting": "Couldn't delete recurring expense",
+    "form": {
+      "addTitle": "Add recurring expense",
+      "editTitle": "Edit recurring expense",
+      "nameLabel": "Name",
+      "namePlaceholder": "e.g. Rent",
+      "nameRequired": "Name is required",
+      "amountLabel": "Amount",
+      "amountError": "Enter an amount greater than 0",
+      "categoryLabel": "Category",
+      "categoryError": "Select a category",
+      "dayOfMonthLabel": "Day of month",
+      "dayOfMonthPlaceholder": "e.g. 1",
+      "dayOfMonthError": "Enter a day between 1 and 31",
+      "cancel": "Cancel",
+      "save": "Save"
+    }
   }
 }

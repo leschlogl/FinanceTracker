@@ -77,5 +77,37 @@
     "deleteConfirmConfirm": "Löschen",
     "errorLoading": "Ausgaben konnten nicht geladen werden",
     "errorDeleting": "Ausgabe konnte nicht gelöscht werden"
+  },
+  "recurringExpenses": {
+    "title": "Wiederkehrende Ausgaben",
+    "addButton": "Wiederkehrende Ausgabe hinzufügen",
+    "emptyTitle": "Noch keine wiederkehrenden Ausgaben",
+    "emptyMessage": "Füge eine wiederkehrende Ausgabe wie Miete oder ein Abo hinzu, damit jeden Monat automatisch eine Ausgabe erstellt wird.",
+    "rowSubtitle": "{{amount}} am {{day}}. Tag",
+    "editAccessibilityLabel": "{{name}} bearbeiten",
+    "deleteAccessibilityLabel": "{{name}} löschen",
+    "deleteConfirmTitle": "Wiederkehrende Ausgabe löschen?",
+    "deleteConfirmMessage": "\"{{name}}\" erstellt keine neuen Ausgaben mehr. Bereits erstellte Ausgaben sind davon nicht betroffen.",
+    "deleteConfirmCancel": "Abbrechen",
+    "deleteConfirmConfirm": "Löschen",
+    "errorLoading": "Wiederkehrende Ausgaben konnten nicht geladen werden",
+    "errorSaving": "Wiederkehrende Ausgabe konnte nicht gespeichert werden",
+    "errorDeleting": "Wiederkehrende Ausgabe konnte nicht gelöscht werden",
+    "form": {
+      "addTitle": "Wiederkehrende Ausgabe hinzufügen",
+      "editTitle": "Wiederkehrende Ausgabe bearbeiten",
+      "nameLabel": "Name",
+      "namePlaceholder": "z. B. Miete",
+      "nameRequired": "Name ist erforderlich",
+      "amountLabel": "Betrag",
+      "amountError": "Gib einen Betrag größer als 0 ein",
+      "categoryLabel": "Kategorie",
+      "categoryError": "Wähle eine Kategorie",
+      "dayOfMonthLabel": "Tag des Monats",
+      "dayOfMonthPlaceholder": "z. B. 1",
+      "dayOfMonthError": "Gib einen Tag zwischen 1 und 31 ein",
+      "cancel": "Abbrechen",
+      "save": "Speichern"
+    }
   }
 }
