@@ -58,5 +58,24 @@
     "deleteConfirmCancel": "Cancel",
     "deleteConfirmConfirm": "Delete",
     "saveError": "Couldn't save this spend"
+  },
+  "spendings": {
+    "title": "Spendings",
+    "addButton": "Add spend",
+    "searchPlaceholder": "Search merchant or note",
+    "filterLabel": "Filter by category",
+    "noMerchant": "Unknown merchant",
+    "emptyTitle": "No spendings yet",
+    "emptyMessage": "Add your first spend to start tracking.",
+    "noResultsTitle": "No matching spendings",
+    "noResultsMessage": "Try a different search or category filter.",
+    "rowAccessibilityLabel": "Edit spend: {{merchant}}, {{amount}}",
+    "deleteAccessibilityLabel": "Delete spend from {{merchant}}",
+    "deleteConfirmTitle": "Delete spend?",
+    "deleteConfirmMessage": "This can't be undone.",
+    "deleteConfirmCancel": "Cancel",
+    "deleteConfirmConfirm": "Delete",
+    "errorLoading": "Couldn't load spendings",
+    "errorDeleting": "Couldn't delete this spend"
   }
 }
